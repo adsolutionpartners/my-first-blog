@@ -1,34 +1,22 @@
 {% load static %}
 <html>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</body>
-</html>
-
-{% load static %}
-<html>
     <head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <title>Ola's blog</title>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
-    </body>
-</html>
+        <div>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
 
-<html>
-    <div>
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
-    {% for post in posts %}    
+        {% for post in posts %}
         <div>
             <p>published: {{ post.published_date }}</p>
             <h2><a href="">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
-    {% endfor %}
+        {% endfor %}
+    </body>
 </html>
